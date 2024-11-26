@@ -15,10 +15,10 @@ const app = express();
 app.use(express.json()); 
 
 // Admin routes
-app.use('/api/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 
 // Start server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8070;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
