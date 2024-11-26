@@ -5,11 +5,7 @@ import AdminModel from '../models/adminModel.js';
 
 // Admin registration
 export const registerAdmin = async (req, res) => {
-    const { name, email, password } = req.body;
-    console.log('Request body:', req.body); 
-    console.log('Name:', name);             
-    console.log('Email:', email);           
-    console.log('Password:', password);  
+    const { name, email, password } = req.body; 
 
     try {
         const existingAdmin = await AdminModel.findOne({ email });
@@ -34,8 +30,7 @@ export const registerAdmin = async (req, res) => {
 
 // Admin login
 export const loginAdmin = async (req, res) => {
-    const { email, password } = req.body;
-    console.log('Request body:', req.body); 
+    const { email, password } = req.body; 
 
     try {
         const admin = await AdminModel.findOne({ email });
