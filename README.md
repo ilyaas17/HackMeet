@@ -46,13 +46,13 @@ cd Hackmeet-Platform
 cd Backend
 ```
 ```bash
-npm run start
+npm start
 ```
 
 ### 3. Start frontend
 ```bash
-cd frontend
+cd Frontend
 ```
 ```bash
-npm run start
+npm start
 ```
