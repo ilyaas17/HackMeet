@@ -4,7 +4,7 @@
   "description": "hackmeet platfrom where we offer hackthons and tech events to be organised ",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "npx nodemon src/app.js",
     "dev": "nodemon src/app.js",
     "test": "test"
   },

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
-import dprofilef from '../../Asserts/default-profile.webp'; 
 import logo from '../../Asserts/logo.jpg';
 
 const Navbar = () => {
@@ -27,7 +26,7 @@ const Navbar = () => {
         <nav className='bg-stone-200 shadow-md fixed w-full top-0 left-0 z-50'>
             <div className='max-w-screen-xl mx-10 mr-0 px-1 py-1 flex justify-between items-center'>
                 {/* App logo on left */}
-                <Link to='/' className='text-2xl font-bold text-blue-600 flex items-center'>
+                <Link to='/home' className='text-2xl font-bold text-blue-600 flex items-center'>
                     <img src={logo} alt="HackMeet Logo" className='rounded-3xl max-h-20 max-w-40' />
                 </Link>
 
@@ -35,7 +34,7 @@ const Navbar = () => {
                 <div className="flex items-center space-x-6">
                     {/* Navbar Links */}
                     <div className="hidden md:flex space-x-6">
-                        <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
+                        <Link to="/home" className="text-gray-700 hover:text-blue-600">Home</Link>
                         <Link to="/about" className="text-gray-700 hover:text-blue-600">About</Link>
                         <Link to="/community" className="text-gray-700 hover:text-blue-600">Community</Link>
                         <Link to="/hackathon" className="text-gray-700 hover:text-blue-600">Hackathon</Link>
