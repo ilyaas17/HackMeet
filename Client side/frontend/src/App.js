@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home"
-import Footer from "./components/Footer/Footer"
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Components/Home/Home"
+import Footer from "./Components/Footer/Footer"
 import {Routes,Route} from "react-router-dom"
-import Signup from './components/SignUp/SignUp';
-import Login from './components/Login/Login';
+import Signup from './Components/SignUp/SignUp';
+import Login from './Components/Login/Login';
 
 function App() {
   return (
