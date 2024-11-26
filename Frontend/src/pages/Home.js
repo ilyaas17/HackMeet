@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from '../components/navbar/Navbar';
-import HeroSection from '../components/home/HeroSection';
-import AboutSection from '../components/home/AboutSection';
-import ScheduleSection from '../components/home/ScheduleSection';
-import SponsorsSection from '../components/home/SponsorsSection';
+import Navbar from '../Components/Navbar/Navbar';
+import HeroSection from '../Components/home/HeroSection';
+import AboutSection from '../Components/home/AboutSection';
+import ScheduleSection from '../Components/home/ScheduleSection';
+import SponsorsSection from '../Components/home/SponsorsSection';
 import bgImage from '../assets/bg_herosection.jpeg';
 // import './Home.css';
 

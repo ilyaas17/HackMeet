@@ -1,7 +1,7 @@
 import './App.css';
-// import Navbar from "./components/navbar/Navbar";
+// import Navbar from "./Components/Navbar/Navbar";
 import Home from "./pages/Home"
-import Footer from "./components/footer/Footer"
+import Footer from "./Components/Footer/Footer"
 import {Routes,Route} from "react-router-dom"
 import Signup from './pages/SignUp';
 import Login from './pages/Login';
