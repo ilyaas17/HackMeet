@@ -4,6 +4,8 @@
   "description": "hackmeet platfrom where we offer hackthons and tech events to be organised ",
   "main": "index.js",
   "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "test"
   },
   "author": "",
@@ -17,5 +19,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7"
-  }
+  },
+  "type": "module"
 }
