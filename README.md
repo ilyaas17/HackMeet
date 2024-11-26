@@ -43,12 +43,18 @@ git clone https://github.com/ilyaas17/Hackmeet-Platform.git
 cd Backend
 ```
 ```bash
+npm install
+```
+```bash
 npm start
 ```
 
 ### 3. Start frontend
 ```bash
 cd Frontend
+```
+```bash
+npm install
 ```
 ```bash
 npm start
