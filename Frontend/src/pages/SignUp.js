@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaUserAlt, FaEnvelope, FaLock, FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { signup } from "../Services/Api";
+import { signup } from "../../src/components/Services/Api";
 
 const Signup = () => {
   const [username, setUsername] = useState("");

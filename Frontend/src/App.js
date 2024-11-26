@@ -1,13 +1,15 @@
 import './App.css';
-import Home from "./Components/Home/Home"
-import Footer from "./Components/Footer/Footer"
+// import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/Home"
+import Footer from "./components/footer/Footer"
 import {Routes,Route} from "react-router-dom"
-import Signup from './Components/SignUp/SignUp';
-import Login from './Components/Login/Login';
+import Signup from './pages/SignUp';
+import Login from './pages/Login';
 
 function App() {
   return (
     <>
+    {/* <Navbar/> */}
     <Routes>
       <Route path="/" element ={<Signup/>}/>
       <Route path="/login" element ={<Login/>}/>
