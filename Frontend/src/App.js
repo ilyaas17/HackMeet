@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer"
 import {Routes,Route} from "react-router-dom"
 import Signup from './pages/SignUp';
 import Login from './pages/Login';
+import CreateHackathonForm from './Components/createHackathon/CreateHackathon';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element ={<Signup/>}/>
       <Route path="/login" element ={<Login/>}/>
       <Route path="/home" element ={<Home/>}/>
+      <Route path="/hackathon" element ={<CreateHackathonForm/>}/>
     </Routes>
       <Footer/>
 

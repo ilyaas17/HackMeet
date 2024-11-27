@@ -1,0 +1,96 @@
+/* Wrapper for the image and form sections */
+.step1-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Left Image Section */
+.image-section {
+    flex: 1; 
+    height: 80%;
+    margin-left: 200px;
+    margin-top: 180px;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Right Form Section */
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Form container */
+.step1-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.step1-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #6a0dad;
+    margin-bottom: 20px;
+}
+
+/* Style for each input group */
+.input-group {
+    margin-bottom: 20px;  /* Space between each input field */
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Style for the inputs */
+input {
+    width: 100%;  /* Full width */
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused input styles */
+input:focus {
+    border-color: #6a0dad;
+    background-color: #fff;
+}
+
+/* Button styling */
+.next-button {
+    width: 100%;  /* Full width */
+    padding: 12px;
+    background-color: #7e34b3;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.next-button:hover {
+    background-color: #6a0dad;
+}

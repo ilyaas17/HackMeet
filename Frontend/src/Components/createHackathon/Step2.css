@@ -1,0 +1,66 @@
+/* Form container */
+.step1-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for each input group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Style for the inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused input styles */
+input:focus {
+    border-color: #6a0dad;
+    background-color: #fff;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Common styling for both buttons */
+.back-btn, .next-btn {
+    padding: 12px;
+    background-color: #7e34b3;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48%;  /* Ensures buttons are evenly spaced */
+}
+
+.back-btn:hover, .next-btn:hover {
+    background-color: #6a0dad;
+}

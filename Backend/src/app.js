@@ -18,8 +18,10 @@ app.use(express.json());
 app.use(cors());
 
 // Admin routes
-app.use('/admin', adminRoutes);
+app.use('/api/admin', adminRoutes);
 app.use("/api/auth", authRoutes)
+app.use("/api/hackathon", adminRoutes)
+
 
 // Start server
 const port = process.env.PORT || 8070;
