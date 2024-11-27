@@ -48,7 +48,7 @@ const hanldeLogout = ()=>{
               <CgProfile />
             </Link>
           </div>
-        {localStorage.getItem("userEmail")===""?<>  <div className="relative">
+        {localStorage.getItem("userEmail")===null?<>  <div className="relative">
             <Link
               to="/login"
               className="text-gray-700 hover:text-purple-600 block"
