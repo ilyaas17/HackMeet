@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from '../Components/Navbar/Navbar';
 import HeroSection from '../Components/home/HeroSection';
 import AboutSection from '../Components/home/AboutSection';
 import FAQ from '../Components/home/FAQ';
 import SponsorsSection from '../Components/home/SponsorsSection';
 import bgImage from '../assets/bg_herosection.jpeg';
 import Footer from '../Components/Footer/Footer';
-// import './Home.css';
+import Navbar from '../Components/Navbar/Navbar';
+
 
 function Home() {
     return (
@@ -21,6 +21,7 @@ function Home() {
                     height: '100vh'
                 }}
             >
+
                 <Navbar className='fixed'/>
                 <HeroSection />
             </div>

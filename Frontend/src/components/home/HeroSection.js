@@ -1,9 +1,16 @@
 import React from 'react';
 import './HeroSection.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import bgImage from '../../assets/bg_herosection.jpeg';
 
 function HeroSection() {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate('/hackathon');
+    };
+
     return (
         <div className="hero-section" >
             <h1>Welcome to Virtual Hackathon 2024</h1>
