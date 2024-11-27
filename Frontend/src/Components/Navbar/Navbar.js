@@ -1,91 +1,71 @@
-import React, { useState } from 'react';
-import {Link} from "react-router-dom"
-import logo from '../../Asserts/logo.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.jpeg";
+import "./Navbar.css";
+import { CgProfile } from "react-icons/cg";
+import { CiLogout } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate("");
 
-    // Handle toggling the authentication state
-    const handleAuthToggle = () => {
-        setIsLoggedIn((prevState) => !prevState);
-    };
+const hanldeLogout = ()=>{
+    localStorage.removeItem('userEmail');
+    navigate("/")
+}
 
-    // Toggle dropdown visibility
-    const toggleDropdown = () => {
-        setIsDropdownOpen((prevState) => !prevState);
-    };
+  return (
+    <nav className="purple-navbar fixed w-full top-0 left-0 z-50">
+      <div className="flex justify-between items-center py-4 px-8">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="HackMeet Logo"
+            className="rounded-3xl max-h-12 max-w-20"
+          />
+        </Link>
 
-    // Handle logout functionality
-    const handleLogout = () => {
-        setIsLoggedIn(false);  // Set logged-in state to false
-        setIsDropdownOpen(false);  // Close dropdown on logout
-    };
-
-    return (
-        <nav className='bg-stone-200 shadow-md fixed w-full top-0 left-0 z-50'>
-            <div className='max-w-screen-xl mx-10 mr-0 px-1 py-1 flex justify-between items-center'>
-                {/* App logo on left */}
-                <Link to='/home' className='text-2xl font-bold text-blue-600 flex items-center'>
-                    <img src={logo} alt="HackMeet Logo" className='rounded-3xl max-h-20 max-w-40' />
-                </Link>
-
-                {/* Right: Navigation Links */}
-                <div className="flex items-center space-x-6">
-                    {/* Navbar Links */}
-                    <div className="hidden md:flex space-x-6">
-                        <Link to="/home" className="text-gray-700 hover:text-blue-600">Home</Link>
-                        <Link to="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-                        <Link to="/community" className="text-gray-700 hover:text-blue-600">Community</Link>
-                        <Link to="/hackathon" className="text-gray-700 hover:text-blue-600">Hackathon</Link>
-                    </div>
-
-                    {/* User Profile/Authentication */}
-                    <div className="relative">
-                        <button
-                            className="flex items-center space-x-2 bg-gray-300 rounded-full px-2 py-2"
-                            onClick={toggleDropdown} 
-                        >
-                            {isLoggedIn ? (
-                                <img
-                                    src="user-profile.jpg" 
-                                    alt="User"
-                                    className="h-10 w-10 rounded-full border-2 border-gray-300"
-                                />
-                            ) : (
-                                <span className="text-gray-700">Login / SignIn</span> 
-                            )}
-                        </button>
-
-                        {/* Dropdown for Auth options */}
-                        {isDropdownOpen && (
-                            <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-40 p-2 space-y-2">
-                                {isLoggedIn ? (
-                                    <>
-                                        <Link to="/profile" className="text-gray-700 hover:text-blue-600 block">
-                                            Profile
-                                        </Link>
-                                        <button
-                                            onClick={handleLogout} 
-                                            className="text-gray-700 hover:text-blue-600 block w-full text-left"
-                                        >
-                                            Logout
-                                        </button>
-                                    </>
-                                ) : (
-                                    <Link to="/login" className="text-gray-700 hover:text-blue-600 block">
-                                        Login / SignIn
-                                    </Link>
-                                )}
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-6">
+          <div className="hidden md:flex space-x-6">
+            <Link to="/home" className="text-white hover:text-purple-300">
+              Home
+            </Link>
+            <Link to="/about" className="text-white hover:text-purple-300">
+              About
+            </Link>
+            <Link to="/community" className="text-white hover:text-purple-300">
+              Community
+            </Link>
+            <Link to="/hackathon" className="text-white hover:text-purple-300">
+              Hackathon
+            </Link>
+            <Link
+              to="/viewprofile"
+              className="text-white hover:text-purple-300 text-[30px]"
+            >
+              <CgProfile />
+            </Link>
+          </div>
+        {localStorage.getItem("userEmail")===null?<>  <div className="relative">
+            <Link
+              to="/login"
+              className="text-gray-700 hover:text-purple-600 block"
+            >
+              Login / SignIn
+              
+            </Link>
+          </div></>:
+          <>
+          <div className="text-[30px] text-purple-800 hover:cursor-pointer" onClick={hanldeLogout}>
+          <CiLogout />
+          </div>
+          </>}
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
-
-
