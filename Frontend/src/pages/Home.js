@@ -12,7 +12,7 @@ function Home() {
     return (
         <div className="home-page">
             <div 
-                className="home-nav-hero " 
+                className="home-nav-hero" 
                 style={{ 
                     backgroundImage: `url(${bgImage})`, 
                     backgroundSize: 'cover',  
