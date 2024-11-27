@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.jpeg';
 import './Navbar.css'
@@ -16,10 +16,23 @@ const Navbar = () => {
         setIsDropdownOpen(false);
     };
 
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+    const handleScroll = () => {
+        setScrolled(window.scrollY > 250);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <nav className='purple-navbar fixed w-full top-0 left-0 z-50'>
+        <nav className={`purple-navbar fixed top-0 left-0 w-full z-50 px-6 py-0 transition-all duration-300 ${
+            scrolled ? "bg-white text-black shadow-lg" : "bg-transparent text-white"
+        }`}>
+            
             <div className='flex justify-between items-center py-4 px-8'>
-                {/* Logo */}
                 <Link to='/' className='flex items-center'>
                     <img src={logo} alt="HackMeet Logo" className='rounded-3xl max-h-12 max-w-20' />
                 </Link>
@@ -29,7 +42,7 @@ const Navbar = () => {
                     <div className="hidden md:flex space-x-6">
                         <Link to="/" className="text-white hover:text-purple-300">Home</Link>
                         <Link to="/about" className="text-white hover:text-purple-300">About</Link>
-                        <Link to="/community" className="text-white hover:text-purple-300">Community</Link>
+                        <Link to="/organizehack" className="text-white hover:text-purple-300">Organize Hackthon</Link>
                         <Link to="/hackathon" className="text-white hover:text-purple-300">Hackathon</Link>
                     </div>
 
@@ -80,3 +93,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
