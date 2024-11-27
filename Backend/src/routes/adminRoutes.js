@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Admin login
 router.post('/login', loginAdmin);
-
+router.post("/createhackathon",createHackathon)
 // Admin registration
 router.post('/register', registerAdmin);
 

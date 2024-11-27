@@ -1,6 +1,6 @@
 import React from "react";
 
-const Step1 = ({ formData, handleChange, handleNext }) => {
+const Step1 = ({ formData, handleChange, handleNext, err }) => {
     return (
         <div className="flex justify-between h-screen font-sans">
             <div className="flex-1 h-3/5 ml-48 mt-44 rounded-l-lg">
@@ -73,6 +73,7 @@ const Step1 = ({ formData, handleChange, handleNext }) => {
                     >
                         Next
                     </button>
+                    {err && <p className="text-red-500 mt-2">{err}</p>}
                 </div>
             </div>
         </div>

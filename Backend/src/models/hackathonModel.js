@@ -41,7 +41,7 @@ const hackathonModel = new mongoose.Schema({
     },
     natureOfHackathon: { 
         type: Boolean,
-        required: true 
+       
     },
     brief: { 
         type: String, 
@@ -61,7 +61,7 @@ const hackathonModel = new mongoose.Schema({
     },
     tentativeDate: { 
         type: Date, 
-        required: true 
+       required: true 
         
     }
 }, { timestamps: true });

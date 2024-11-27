@@ -1,4 +1,3 @@
-// frontend/src/services/api.js
 import axios from "axios";
 
 const API_URL = "http://localhost:8070/api/";
@@ -29,7 +28,7 @@ export const login = async (userData) => {
 export const createHackathon = async (hackathonData) => {
   try { 
     const token = localStorage.getItem('authToken');  
-    const response = await axios.post(`${API_URL}hackathon`, hackathonData, {
+    const response = await axios.post(`${API_URL}hackathon/createhackathon`, hackathonData, {
       headers: {
         Authorization: `Bearer ${token}`,   
       },
@@ -37,6 +36,9 @@ export const createHackathon = async (hackathonData) => {
     return response.data;
   } catch (error) {
     throw error.response?.data || error.message;
+  }
+}
+
 
 export const updateUserProfile = async (email, updatedData) => {
   try {

@@ -70,8 +70,10 @@ export const createHackathon = async (req, res) => {
         brief,
         expectedRegistrations,
         teamSizeRange,
-        tentativeDate   
+        tentativeDate
     } = req.body;
+
+    console.log(req.body)
 
     try { 
         if (!brief || brief.length < 100) {
@@ -97,7 +99,7 @@ export const createHackathon = async (req, res) => {
             brief,
             expectedRegistrations,
             teamSizeRange,
-            tentativeDate   
+            tentativeDate
         });
 
         res.status(201).json({
@@ -106,6 +108,6 @@ export const createHackathon = async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Error creating hackathon' });
+        res.status(500).json({ message: err.message });
     }
 };
