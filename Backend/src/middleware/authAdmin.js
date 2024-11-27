@@ -9,7 +9,7 @@ export const authAdmin = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.adminId = decoded.id;  // Store the admin ID from the token
+        req.adminId = decoded.id; 
         next();
     } catch (err) {
         res.status(401).json({ message: 'Invalid or expired token' });

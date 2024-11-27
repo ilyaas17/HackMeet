@@ -38,21 +38,24 @@ To run the HackMeet platform locally, follow these steps:
 ```bash
 git clone https://github.com/ilyaas17/Hackmeet-Platform.git
 ```
-```bash
-cd Hackmeet-Platform
-```
 ### 2. Start Backend Server
 ```bash
 cd Backend
 ```
 ```bash
-npm run start
+npm install
+```
+```bash
+npm start
 ```
 
 ### 3. Start frontend
 ```bash
-cd frontend
+cd Frontend
 ```
 ```bash
-npm run start
+npm install
+```
+```bash
+npm start
 ```

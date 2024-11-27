@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import { FaUserAlt, FaEnvelope, FaLock, FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { signup } from "../Services/Api";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      console.log("Signed Up:", { username, email, password });
+    if (password !== confirmPassword) {
+      setError("Passwords do not match!");
+      return;
+    }
+    try {
+      const data = await signup({ username, email, password });
       navigate("/home")
-    } else {
-      console.error("Passwords do not match!");
+      console.log("Signup successful:", data);
+    } catch (err) {
+      setError(err.message);
     }
   };
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
@@ -78,6 +84,7 @@ const Signup = () => {
             Log In
           </Link>
         </p>
+        {error&& <p className="text-red-500">{error}</p>}
       </div>
     </div>
   );

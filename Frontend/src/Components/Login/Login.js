@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { login } from "../Services/Api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate("");
+  const [error, setError] = useState("");
+  const navigate= useNavigate("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit= async (e) => {
     e.preventDefault();
-    console.log("Logged In:", { email, password });
-    navigate("/home")
+    try {
+      const data = await login({ email, password });
+      console.log("Login successful:", data);
+      navigate("/home")
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -53,6 +60,7 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
+        {error&& <p className="text-red-500">{error}</p>}
       </div>
     </div>
   );
