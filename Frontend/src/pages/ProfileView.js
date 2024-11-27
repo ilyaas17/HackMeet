@@ -8,7 +8,7 @@ const ProfileView = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(true);
-  const email = localStorage.getItem("userEmail");
+  const email = localStorage.getItem("userEmail") ||"";
 
   useEffect(() => {
     const fetchProfile = async () => {

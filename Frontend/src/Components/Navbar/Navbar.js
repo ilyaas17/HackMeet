@@ -13,6 +13,10 @@ const hanldeLogout = ()=>{
     localStorage.removeItem('userEmail');
     navigate("/")
 }
+const gotToProfile =()=>{
+    navigate("/viewprofile")
+
+}
 
   return (
     <nav className="purple-navbar fixed w-full top-0 left-0 z-50">
@@ -45,7 +49,6 @@ const hanldeLogout = ()=>{
               to="/viewprofile"
               className="text-white hover:text-purple-300 text-[30px]"
             >
-              <CgProfile />
             </Link>
           </div>
         {localStorage.getItem("userEmail")===null?<>  <div className="relative">
@@ -58,8 +61,13 @@ const hanldeLogout = ()=>{
             </Link>
           </div></>:
           <>
-          <div className="text-[30px] text-purple-800 hover:cursor-pointer" onClick={hanldeLogout}>
+          <div className="text-[30px] text-purple-800 hover:cursor-pointer flex gap-2">
+           <div onClick={gotToProfile}>
+           <CgProfile/>
+           </div>
+          <div onClick={hanldeLogout}>
           <CiLogout />
+          </div>
           </div>
           </>}
         </div>
