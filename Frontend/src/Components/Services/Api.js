@@ -3,6 +3,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8070/api/";
 
+
 export const signup = async (userData) => {
   try {
     const response = await axios.post(`${API_URL}auth/signup`, userData);
@@ -23,6 +24,20 @@ export const login = async (userData) => {
     throw error.response.data;
   }
 };
+
+
+export const createHackathon = async (hackathonData) => {
+  try { 
+    const token = localStorage.getItem('authToken');  
+    const response = await axios.post(`${API_URL}hackathon`, hackathonData, {
+      headers: {
+        Authorization: `Bearer ${token}`,   
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+
 export const updateUserProfile = async (email, updatedData) => {
   try {
     const response = await axios.put(`${API_URL}user/${email}`, updatedData);
@@ -38,5 +53,6 @@ export const getUserProfile = async (email) => {
     return response.data;
   } catch (error) {
     throw error.response.data;
+
   }
 };

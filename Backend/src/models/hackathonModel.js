@@ -20,7 +20,7 @@ const hackathonModel = new mongoose.Schema({
     linkedinProfile: { 
         type: String 
     },
-    collegeOrCommunityName: { 
+    collegeName: { 
         type: String, 
         required: true 
     },
@@ -40,12 +40,9 @@ const hackathonModel = new mongoose.Schema({
         required: true 
     },
     natureOfHackathon: { 
-        type: String, 
+        type: Boolean,
         required: true 
     },
-    isOnline: { 
-        type: Boolean, 
-        required: true },
     brief: { 
         type: String, 
         required: true, 
@@ -62,21 +59,11 @@ const hackathonModel = new mongoose.Schema({
         required: true 
         
     },
-    organizationName: { 
-        type: String, 
-        required: true 
-        
-    },
-    hackathonCity: { 
-        type: String, 
-        required: true 
-        
-    },
     tentativeDate: { 
         type: Date, 
         required: true 
         
-    },
+    }
 }, { timestamps: true });
 
 export default mongoose.model('Hackathon', hackathonModel);

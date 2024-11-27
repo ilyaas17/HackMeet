@@ -21,7 +21,11 @@ app.use(cors());
 // Admin routes
 app.use('/api/admin', adminRoutes);
 app.use("/api/auth", authRoutes)
+
+app.use("/api/hackathon", adminRoutes)
+
 app.use("/api/user", userProfileRoutes);
+
 
 // Start server
 const port = process.env.PORT || 8070;
