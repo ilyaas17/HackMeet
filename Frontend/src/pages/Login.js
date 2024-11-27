@@ -13,8 +13,7 @@ const Login = () => {
   const handleSubmit= async (e) => {
     e.preventDefault();
     try {
-      const data = await login({ email, password });
-      console.log("Login successful:", data);
+      await login({ email, password });
       navigate("/home")
     } catch (err) {
       setError(err.message);
@@ -24,12 +23,12 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-3xl font-semibold text-center text-blue-600">Login</h2>
+        <h2 className="text-3xl font-semibold text-center text-purple-600">Login</h2>
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div className="relative">
             <input
               type="email"
-              className="w-full p-4 pl-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-4 pl-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +39,7 @@ const Login = () => {
           <div className="relative">
             <input
               type="password"
-              className="w-full p-4 pl-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-4 pl-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -49,14 +48,14 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-md mt-6 hover:bg-blue-700 transition duration-300"
+            className="w-full bg-purple-600 text-white p-3 rounded-md mt-6 hover:bg-purple-700 transition duration-300"
           >
             Log In
           </button>
         </form>
         <p className="text-center text-sm mt-4">
           Don't have an account?{" "}
-          <Link to="/" className="text-blue-600 hover:underline">
+          <Link to="/" className="text-purple-600 hover:underline">
             Sign Up
           </Link>
         </p>

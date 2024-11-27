@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from "./routes/authRoutes.js"
+import userProfileRoutes from "./routes/userProfileRoutes.js"
 import cors from "cors";
 
 // Load environment variables
@@ -20,7 +21,10 @@ app.use(cors());
 // Admin routes
 app.use('/api/admin', adminRoutes);
 app.use("/api/auth", authRoutes)
+
 app.use("/api/hackathon", adminRoutes)
+
+app.use("/api/user", userProfileRoutes);
 
 
 // Start server
