@@ -15,7 +15,7 @@ const Login = () => {
     try {
       const data = await login({ email, password });
       console.log("Login successful:", data);
-      navigate("/home")
+      navigate("/")
     } catch (err) {
       setError(err.message);
     }
