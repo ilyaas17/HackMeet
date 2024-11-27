@@ -19,9 +19,8 @@ const Signup = () => {
       return;
     }
     try {
-      const data = await signup({ username, email, password });
+      await signup({ username, email, password });
       navigate("/home")
-      console.log("Signup successful:", data);
     } catch (err) {
       setError(err.message);
     }

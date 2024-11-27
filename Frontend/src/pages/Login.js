@@ -13,8 +13,7 @@ const Login = () => {
   const handleSubmit= async (e) => {
     e.preventDefault();
     try {
-      const data = await login({ email, password });
-      console.log("Login successful:", data);
+      await login({ email, password });
       navigate("/home")
     } catch (err) {
       setError(err.message);
