@@ -61,24 +61,27 @@ export const createHackathon = async (req, res) => {
         contactNumber,
         designation,
         linkedinProfile,
-        collegeOrCommunityName,
+        collegeName,
         city,
         hasOrganizedBefore,
         previousHackathonLink,
         hackathonName,
-        natureOfHackathon,
-        isOnline,
+        natureOfHackathon, 
         brief,
         expectedRegistrations,
         teamSizeRange,
-        organizationName,
-        hackathonCity,
-        tentativeDate,
+        tentativeDate
     } = req.body;
 
-    try {
+    console.log(req.body)
+
+    try { 
         if (!brief || brief.length < 100) {
             return res.status(400).json({ message: 'Brief about the hackathon must be at least 100 characters long.' });
+        }
+
+        if (!tentativeDate) {
+            return res.status(400).json({ message: 'Tentative date of the hackathon is required.' });
         }
 
         const newHackathon = await Hackathon.create({
@@ -87,19 +90,16 @@ export const createHackathon = async (req, res) => {
             contactNumber,
             designation,
             linkedinProfile,
-            collegeOrCommunityName,
+            collegeName,
             city,
             hasOrganizedBefore,
             previousHackathonLink,
             hackathonName,
-            natureOfHackathon,
-            isOnline,
+            natureOfHackathon, 
             brief,
             expectedRegistrations,
             teamSizeRange,
-            organizationName,
-            hackathonCity,
-            tentativeDate,
+            tentativeDate
         });
 
         res.status(201).json({
@@ -108,6 +108,6 @@ export const createHackathon = async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Error creating hackathon' });
+        res.status(500).json({ message: err.message });
     }
 };

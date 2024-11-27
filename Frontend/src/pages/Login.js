@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { login } from "../Services/Api";
+import { login } from "../../src/Components/Services/Api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ const Login = () => {
     try {
       const data = await login({ email, password });
       console.log("Login successful:", data);
-      navigate("/home")
+      navigate("/")
     } catch (err) {
       setError(err.message);
     }
@@ -56,7 +56,7 @@ const Login = () => {
         </form>
         <p className="text-center text-sm mt-4">
           Don't have an account?{" "}
-          <Link to="/" className="text-blue-600 hover:underline">
+          <Link to="/signup" className="text-blue-600 hover:underline">
             Sign Up
           </Link>
         </p>
