@@ -48,18 +48,30 @@ const Navbar = () => {
         <div className="flex items-center space-x-6">
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-white hover:text-purple-300">Home</Link>
-            <Link to="/about" className="text-white hover:text-purple-300">About</Link>
-            {localStorage.getItem("userEmail") === null ?   
-            <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >View Hackathon </Link>  :
-            <Link to="/hackathons" className="text-white hover:text-purple-300">View Hackathon</Link>
+            <Link
+              to="#"
+              className="text-white hover:text-purple-300"
+              onClick={(e) => {
+                e.preventDefault();
+                const aboutSection = document.getElementById('about');
+                if (aboutSection) {
+                  aboutSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              About
+            </Link>
+            {localStorage.getItem("userEmail") === null ?
+              <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >View Hackathon </Link> :
+              <Link to="/hackathons" className="text-white hover:text-purple-300">View Hackathon</Link>
             }
-            {localStorage.getItem("userEmail") === null ?   
-            <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Organize Hackathon </Link>  :
-            <Link to="/organizehack" className="text-white hover:text-purple-300">Organize Hackathon</Link>
+            {localStorage.getItem("userEmail") === null ?
+              <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Organize Hackathon </Link> :
+              <Link to="/organizehack" className="text-white hover:text-purple-300">Organize Hackathon</Link>
             }
-            {localStorage.getItem("userEmail") === null ?   
-            <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Manage Hackathon </Link>  :
-            <Link to="/managehackathon" className="text-white hover:text-purple-300">Manage Hackathon</Link>
+            {localStorage.getItem("userEmail") === null ?
+              <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Manage Hackathon </Link> :
+              <Link to="/managehackathon" className="text-white hover:text-purple-300">Manage Hackathon</Link>
             }
             <Link to="/viewprofile" className="text-white hover:text-purple-300 text-[30px]"></Link>
           </div>
