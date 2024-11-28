@@ -9,6 +9,7 @@ import CreateHackathonForm from './Components/createHackathon/CreateHackathon';
 import Footer from "./Components/Footer/Footer"
 import ProfileView from './pages/ProfileView';
 import Navbar from './Components/Navbar/Navbar';
+import ViewHackathon from './pages/ViewHackathon';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/organizehack" element ={<CreateHackathonForm/>}/>
       <Route path="/viewprofile" element ={<ProfileView/>}/>
       <Route path="/managehackathon" element ={<ManageHackathon/>}/>
+      <Route path="/hackathons" element ={<ViewHackathon/>}/>
     </Routes>
       <Footer/>
 
