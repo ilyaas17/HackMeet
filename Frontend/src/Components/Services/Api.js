@@ -39,6 +39,15 @@ export const createHackathon = async (hackathonData) => {
   }
 }
 
+export const userRegistration = async (registereduser) => {
+  try { 
+    const response = await axios.post(`${API_URL}register/registerUser`, registereduser);
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+}
+
 
 export const updateUserProfile = async (email, updatedData) => {
   try {
