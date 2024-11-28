@@ -1,7 +1,7 @@
-// frontend/src/services/api.js
 import axios from "axios";
 
 const API_URL = "http://localhost:8070/api/";
+
 
 export const signup = async (userData) => {
   try {
@@ -23,6 +23,23 @@ export const login = async (userData) => {
     throw error.response.data;
   }
 };
+
+
+export const createHackathon = async (hackathonData) => {
+  try { 
+    const token = localStorage.getItem('authToken');  
+    const response = await axios.post(`${API_URL}hackathon/createhackathon`, hackathonData, {
+      headers: {
+        Authorization: `Bearer ${token}`,   
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+}
+
+
 export const updateUserProfile = async (email, updatedData) => {
   try {
     const response = await axios.put(`${API_URL}user/${email}`, updatedData);
@@ -38,5 +55,51 @@ export const getUserProfile = async (email) => {
     return response.data;
   } catch (error) {
     throw error.response.data;
+
   }
 };
+
+
+export const getHackathonsData = async () => {
+  try {
+    const response = await axios.get(`${API_URL}allhackathon/hackathonsdata`);
+    return response.data;   
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+}
+
+
+export const getUserHackathons = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}manageuserhackathon/getuserhackathons?email=${email}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updateUserHackathon = async (hackathonData,id) => {
+  try {
+    const response = await axios.put(
+      `${API_URL}manageuserhackathon/updateuserhackathon?id=${id}`, 
+      hackathonData
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+
+export const deleteHackathon = async (id) => {
+  try {
+    const response = await axios.delete(
+      `${API_URL}manageuserhackathon/deleteuserhackathon?id=${id}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+

@@ -14,16 +14,15 @@ export const getUserProfile = async (req, res) => {
   }
 };
 
-// Update User Profile
 export const updateUserProfile = async (req, res) => {
   try {
-    const { email } = req.params; // Assuming email is passed in the route
+    const { email } = req.params; 
     const updatedData = req.body;
 
     const updatedProfile = await UserProfile.findOneAndUpdate(
       { email },
       updatedData,
-      { new: true } // Returns the updated document
+      { new: true }
     );
 
     if (!updatedProfile) {

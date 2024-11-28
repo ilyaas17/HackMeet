@@ -1,11 +1,10 @@
-.purple-navbar {
-    background-color: transparent; /* Transparent background */
-    position: sticky;
-    top: 0; /* Make it stick to the top */
-    z-index: 50; /* Ensure it stays on top of other elements */
-    box-shadow: none; /* No shadow for a clean look */
-    transition: background-color 0.3s ease; /* Smooth transition on scroll */
-}
+/* .purple-navbar {
+    background-color: transparent;
+    top: 0; 
+    z-index: 50; 
+    box-shadow: none; 
+    transition: background-color 0.3s ease; 
+} */
 
 .purple-navbar a {
     color: #6a0dad; /* Navbar links default to white */
