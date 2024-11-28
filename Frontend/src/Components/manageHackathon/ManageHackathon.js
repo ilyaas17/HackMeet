@@ -89,9 +89,7 @@ const ManageHackathon = () => {
 
       {hackathons.length === 0 ? (
         <div className="flex flex-col items-center justify-center text-center">
-          <p className="text-purple-500 text-[50px]">
-            You have not organised any Hackathons Yet.
-          </p>
+         
           <button
             className="p-2 border-2 border-purple-400 rounded-md text-purple-500 hover:bg-purple-600 hover:text-white transition-all duration-200 mt-4"
             onClick={moveToOrganizehackathon}

@@ -33,6 +33,7 @@ export const updateUserHackathon = async (req, res) => {
 
 
 export const deleteUserHackathon = async (req, res) => {
+  const id = req.query.id
   console.log("id form backend ", id)
   try {
     const hackathon = await hackathonModel.findByIdAndDelete(id);
