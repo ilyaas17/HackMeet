@@ -27,30 +27,30 @@ const ViewHackathon = () => {
         return <div>Loading...</div>;
     }
 
-    const filteredHackathons = hackathons.filter(hackathon => 
+    const filteredHackathons = hackathons.filter(hackathon =>
         hackathon.fullName.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Handle search action on Enter key or Button click
     const handleSearch = (e) => {
-        e.preventDefault();  // Prevent form submission
-        // Here you can add additional logic if needed (e.g., tracking search queries)
+        e.preventDefault();
     };
 
-    // Trigger search on Enter key press
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
-            handleSearch(e); // Trigger search
+            handleSearch(e);
         }
     };
 
     return (
         <div className="bg-gray-100 py-8 mt-20">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center mb-6">All Hackathons</h1>
+                <h1 className="text-5xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-400 ">
+                    All Hackathons
+                </h1>
+
 
                 {/* Search Bar with Button */}
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex p-10 justify-center">
                     <input
                         type="text"
                         placeholder="Search Hackathons..."
@@ -67,9 +67,15 @@ const ViewHackathon = () => {
                     </button>
                 </div>
 
+                {/* Display message when no hackathons match the search query */}
+                {filteredHackathons.length === 0 && searchQuery !== "" && (
+                    <p className="text-center text-4xl font-bold p-40 text-red-500">No hackathons found matching your search.</p>
+                )}
+
                 {/* Grid Layout for Hackathon Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {hackathons.map((hackathon) => (
+                    {/* Map over the filteredHackathons if a search query is entered */}
+                    {(searchQuery ? filteredHackathons : hackathons).map((hackathon) => (
                         <div
                             key={hackathon._id}
                             className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
