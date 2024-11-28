@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`purple-navbar fixed top-0 left-0 w-full z-50 px-6 py-0 transition-all duration-300 ${scrolled ? "bg-white text-black shadow-lg" : "bg-transparent text-white"
+    <nav className={`purple-navbar fixed top-0 left-0 w-full z-50 px-6 py-0 transition-all duration-300 ${scrolled ? "bg-white text-black shadow-lg" : " text-white"
       }`}>
       <div className="flex justify-between items-center py-4 px-8">
         <Link to="/" className="flex items-center">
@@ -39,6 +39,9 @@ const Navbar = () => {
             alt="HackMeet Logo"
             className="rounded-3xl max-h-12 max-w-20"
           />
+          <span className="ml-2 text-4xl font-bold text-purple-700">
+            HackMeet
+          </span>
         </Link>
 
         {/* Navigation Links */}
@@ -53,6 +56,10 @@ const Navbar = () => {
             {localStorage.getItem("userEmail") === null ?   
             <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Organize Hackathon </Link>  :
             <Link to="/organizehack" className="text-white hover:text-purple-300">Organize Hackathon</Link>
+            }
+            {localStorage.getItem("userEmail") === null ?   
+            <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Manage Hackathon </Link>  :
+            <Link to="/managehackathon" className="text-white hover:text-purple-300">Manage Hackathon</Link>
             }
             <Link to="/viewprofile" className="text-white hover:text-purple-300 text-[30px]"></Link>
           </div>

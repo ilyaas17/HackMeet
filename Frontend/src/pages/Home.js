@@ -4,7 +4,6 @@ import AboutSection from '../Components/home/AboutSection';
 import FAQ from '../Components/home/FAQ';
 import SponsorsSection from '../Components/home/SponsorsSection';
 import bgImage from '../assets/bg_herosection.jpeg';
-import Footer from '../Components/Footer/Footer';
 import Navbar from '../Components/Navbar/Navbar';
 import HackathonsData from '../Components/home/HackathonsData';
 
@@ -30,7 +29,7 @@ function Home() {
             <SponsorsSection />
             <AboutSection />
             <FAQ />
-            <Footer/>
+          
         </div>
     );
 }
