@@ -1,0 +1,102 @@
+/* Container styling */
+.hackathonPageContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Title and section headings */
+  .hackathonPageTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .hackathonMode {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+    margin-top: 1rem;
+  }
+  
+  /* Paragraph and additional details */
+  .hackathonDetails {
+    font-size: 1.125rem;
+    color: #34495e;
+    margin-top: 0.5rem;
+  }
+  
+  .hackathonDetails pre {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* Button for "Apply Now" */
+  .applyButton {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.25rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .applyButton:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Application Status section */
+  .applicationStatus {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  .applicationStatus p {
+    margin: 0.5rem 0;
+    color: #7f8c8d;
+  }
+  
+  /* Host details section */
+  .hostDetails {
+    margin-top: 2rem;
+  }
+  
+  .hostDetails p {
+    font-size: 1.125rem;
+    color: #34495e;
+  }
+  
+  .hostDetails p:first-child {
+    font-weight: bold;
+  }
+  
+  /* Make content responsive */
+  @media (max-width: 768px) {
+    .hackathonPageContainer {
+      padding: 1rem;
+    }
+  
+    .hackathonPageTitle {
+      font-size: 2rem;
+    }
+  
+    .hackathonMode {
+      font-size: 1.25rem;
+    }
+  
+    .hackathonDetails {
+      font-size: 1rem;
+    }
+  
+    .applyButton {
+      width: 100%;
+      font-size: 1.125rem;
+    }
+  }
+  
