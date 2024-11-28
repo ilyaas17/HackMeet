@@ -83,7 +83,7 @@ const ViewHackathon = () => {
                             {/* Hackathon Image */}
                             <img
                                 src={logo}
-                                alt={hackathon.fullName}
+                                alt={hackathon.hackathonName}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-4">

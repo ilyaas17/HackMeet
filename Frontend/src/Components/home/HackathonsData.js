@@ -57,7 +57,7 @@ const HackathonsData = () => {
                 </p>
 
                 <Link
-                  to={`/viewhackathon/${hackathon._id}`}
+                  to={`/registration/${hackathon._id}`}
                   className="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded-md text-center hover:bg-purple-500"
                 >
                   Apply Now

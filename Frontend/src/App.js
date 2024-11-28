@@ -10,6 +10,8 @@ import Footer from "./Components/Footer/Footer"
 import ProfileView from './pages/ProfileView';
 import Navbar from './Components/Navbar/Navbar';
 import ViewHackathon from './pages/ViewHackathon';
+import HackathonsData from './Components/home/HackathonsData';
+import RegistrationForm from './Components/registrationForm/RegistrationForm';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
       <Route path="/viewprofile" element ={<ProfileView/>}/>
       <Route path="/managehackathon" element ={<ManageHackathon/>}/>
       <Route path="/hackathons" element ={<ViewHackathon/>}/>
+      <Route path="/" element={<HackathonsData />} />
+      <Route path="/registration/:id" element={<RegistrationForm />} />
     </Routes>
       <Footer/>
 
