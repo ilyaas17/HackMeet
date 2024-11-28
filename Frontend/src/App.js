@@ -10,6 +10,7 @@ import Footer from "./Components/Footer/Footer"
 import ProfileView from './pages/ProfileView';
 import Navbar from './Components/Navbar/Navbar';
 import ViewHackathon from './pages/ViewHackathon';
+import About from './pages/About';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path="/viewprofile" element ={<ProfileView/>}/>
       <Route path="/managehackathon" element ={<ManageHackathon/>}/>
       <Route path="/hackathons" element ={<ViewHackathon/>}/>
+      <Route path="/about" element ={<About/>}/>
     </Routes>
       <Footer/>
 
