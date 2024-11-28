@@ -39,14 +39,14 @@ const About = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+        <div className="min-h-screen bg-gradient-to-r from-pink-100 to-purple-300 text-white">
             <header className="p-6 text-center pt-28 ">
                 <img
                     src={logo}
                     alt="Website Logo"
                     className="mx-auto mb-24 h-96 w-1/2 rounded-lg opacity-50"
                 />
-                <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-950 via-blue-200 to-pink-200 bg-clip-text text-transparent">About Us</h1>
+                <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-900  to-blue-900 bg-clip-text text-transparent">About Us</h1>
             </header>
 
             <div className="container mx-auto px-4 py-12">
