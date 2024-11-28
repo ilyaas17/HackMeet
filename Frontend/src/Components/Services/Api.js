@@ -60,6 +60,16 @@ export const getUserProfile = async (email) => {
 };
 
 
+export const getHackathonsData = async () => {
+  try {
+    const response = await axios.get(`${API_URL}allhackathon/hackathonsdata`);
+    return response.data;   
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+}
+
+
 export const getUserHackathons = async (email) => {
   try {
     const response = await axios.get(`${API_URL}manageuserhackathon/getuserhackathons?email=${email}`);
@@ -92,3 +102,4 @@ export const deleteHackathon = async (id) => {
     throw error.response.data;
   }
 };
+

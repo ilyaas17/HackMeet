@@ -51,7 +51,7 @@ const Navbar = () => {
             <Link to="/about" className="text-white hover:text-purple-300">About</Link>
             {localStorage.getItem("userEmail") === null ?   
             <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >View Hackathon </Link>  :
-            <Link to="/hackathon" className="text-white hover:text-purple-300">View Hackathon</Link>
+            <Link to="/hackathons" className="text-white hover:text-purple-300">View Hackathon</Link>
             }
             {localStorage.getItem("userEmail") === null ?   
             <Link to="/login" className="text-gray-700 hover:text-purple-600 block" >Organize Hackathon </Link>  :
