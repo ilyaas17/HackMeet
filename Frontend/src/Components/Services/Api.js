@@ -58,3 +58,37 @@ export const getUserProfile = async (email) => {
 
   }
 };
+
+
+export const getUserHackathons = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}manageuserhackathon/getuserhackathons?email=${email}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updateUserHackathon = async (hackathonData,id) => {
+  try {
+    const response = await axios.put(
+      `${API_URL}manageuserhackathon/updateuserhackathon?id=${id}`, 
+      hackathonData
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+
+export const deleteHackathon = async (id) => {
+  try {
+    const response = await axios.delete(
+      `${API_URL}manageuserhackathon/deleteuserhackathon?id=${id}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};

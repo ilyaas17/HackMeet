@@ -5,6 +5,7 @@ import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from "./routes/authRoutes.js"
 import userProfileRoutes from "./routes/userProfileRoutes.js"
 import cors from "cors";
+import manageUserHackathon from "./routes/manageUserHackathon.js"
 
 // Load environment variables
 dotenv.config();
@@ -25,6 +26,7 @@ app.use("/api/auth", authRoutes)
 app.use("/api/hackathon", adminRoutes)
 
 app.use("/api/user", userProfileRoutes);
+app.use("/api/manageuserhackathon",manageUserHackathon)
 
 
 // Start server

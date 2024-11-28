@@ -73,8 +73,6 @@ export const createHackathon = async (req, res) => {
         tentativeDate
     } = req.body;
 
-    console.log(req.body)
-
     try { 
         if (!brief || brief.length < 100) {
             return res.status(400).json({ message: 'Brief about the hackathon must be at least 100 characters long.' });
