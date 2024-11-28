@@ -30,14 +30,14 @@ const HackathonsData = () => {
   const latestHackathons = hackathons.slice(-5);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="container mx-4">
-        <h1 className="text-3xl font-bold text-center mb-6">Hackathons</h1>
+    <div className=" bg-gray-100 py-8">
+      <div className="container mx-2 ">
+        <h1 className="text-5xl font-bold text-center mb-6 pl-48">Hackathons</h1>
         <div className="flex space-x-6 pb-6">
           {latestHackathons.map((hackathon) => (
             <div
               key={hackathon._id}
-              className="flex-shrink-0 w-[310px] bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
+              className="flex-shrink-0 w-[265px] bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
             >
               {/* Hackathon Image */}
               <img
@@ -66,7 +66,7 @@ const HackathonsData = () => {
             </div>
           ))}
         </div>
-        <div className="text-right">
+        <div className="text-right ">
           <Link
             to="/hackathons"
             className="text-lg font-semibold text-purple-600 hover:text-purple-500 border-2 border-purple-600 rounded-md p-3"
