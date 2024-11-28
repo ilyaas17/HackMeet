@@ -63,7 +63,7 @@ const Step1 = ({ formData, handleChange, nextStep }) => {
 };
 
 // Step 2: Education Form
-const Step2 = ({ formData, handleChange, nextStep, prevStep }) => {
+const Step2 = ({ formData, handleChange, nextStep, prevStep, err }) => {
     return (
         <div className="max-w-2xl mx-auto p-6">
             <h2 className="text-3xl font-semibold text-center text-purple-700 mb-6">Education Information</h2>
@@ -113,12 +113,13 @@ const Step2 = ({ formData, handleChange, nextStep, prevStep }) => {
                     Continue
                 </button>
             </div>
+            {err && <p className='text-red-500'>{err}</p>}
         </div>
     );
 };
 
 // Step 3: Experience Form
-const Step3 = ({ formData, handleChange, nextStep, prevStep }) => {
+const Step3 = ({ formData, handleChange, nextStep, prevStep, err }) => {
 
     return (
         <div className="max-w-2xl mx-auto p-6">
@@ -159,12 +160,13 @@ const Step3 = ({ formData, handleChange, nextStep, prevStep }) => {
                     Continue
                 </button>
             </div>
+            {err && <p className='text-red-500'>{err}</p>}
         </div>
     );
 };
 
 // Step 4: Links Form
-const Step4 = ({ formData, handleChange, handleSubmit, prevStep }) => {
+const Step4 = ({ formData, handleChange, handleSubmit, prevStep, err }) => {
     return (
         <div className="max-w-2xl mx-auto p-6">
             <h2 className="text-3xl font-semibold text-center text-purple-700 mb-6">Links</h2>
@@ -193,6 +195,7 @@ const Step4 = ({ formData, handleChange, handleSubmit, prevStep }) => {
                     Submit
                 </button>
             </div>
+            {err && <p className='text-red-500'>{err}</p>}
         </div>
     );
 };
@@ -227,22 +230,24 @@ const RegistrationForm = () => {
 
     const handleSubmit = async () => {
         const { username, city, email, phone, institution, fieldOfStudy, graduationDate, expertise, skills, githubLink } = formData;
-        
-        if (!username || !city || !email || !phone || !institution || !fieldOfStudy || !graduationDate || !expertise || !skills || !githubLink) {
+        if (!username.trim() || !city.trim() || !email.trim() || !phone.trim() ||
+            !institution.trim() || !fieldOfStudy.trim() || !graduationDate.trim() || 
+            !expertise.trim() || !skills.trim() || !githubLink.trim()) {
             setError("Please fill in all required fields!");
             return;
-        } 
-        setError("");
+        }
     
-        try { 
-            console.log("Form Submitted:", formData);
-            await userRegistration(formData);  
-            
-            alert("Registration successful!");  
+        setError(""); // Clear any previous errors
+        try {
+            await userRegistration(formData); // Call API
+            alert("Registration successful!"); // Show success message
         } catch (error) {
-            setError(error.message);  
+            // Capture and display API errors
+            setError("Failed to submit. Please try again.");
+            console.error("Submission Error:", error);
         }
     };
+    
     
 
     return (
@@ -250,13 +255,13 @@ const RegistrationForm = () => {
             <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
                 {currentStep === 1 && <Step1 formData={formData} handleChange={handleChange} nextStep={nextStep} />}
                 {currentStep === 2 && (
-                    <Step2 formData={formData} handleChange={handleChange} nextStep={nextStep} prevStep={prevStep} />
+                    <Step2 formData={formData} handleChange={handleChange} nextStep={nextStep} prevStep={prevStep} err={err}/>
                 )}
                 {currentStep === 3 && (
-                    <Step3 formData={formData} handleChange={handleChange} nextStep={nextStep} prevStep={prevStep} />
+                    <Step3 formData={formData} handleChange={handleChange} nextStep={nextStep} prevStep={prevStep} err={err}/>
                 )}
                 {currentStep === 4 && (
-                    <Step4 formData={formData} handleChange={handleChange} prevStep={prevStep}  handleSubmit={handleSubmit}/>
+                    <Step4 formData={formData} handleChange={handleChange} prevStep={prevStep}  handleSubmit={handleSubmit} err ={err}/>
                 )} 
             </div>
         </div>
