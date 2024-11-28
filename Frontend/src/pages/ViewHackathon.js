@@ -87,7 +87,7 @@ const ViewHackathon = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-4">
-                                <h2 className="text-xl font-semibold text-purple-600">{hackathon.fullName}</h2>
+                                <h2 className="text-xl font-semibold text-purple-600">{hackathon.hackathonName}</h2>
                                 <p className="text-gray-600 mt-2">
                                     {`Deadline: ${new Date(hackathon.tentativeDate).toLocaleDateString()}`}
                                 </p>
