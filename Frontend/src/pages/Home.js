@@ -6,6 +6,7 @@ import SponsorsSection from '../Components/home/SponsorsSection';
 import bgImage from '../assets/bg_herosection.jpeg';
 import Footer from '../Components/Footer/Footer';
 import Navbar from '../Components/Navbar/Navbar';
+import HackathonsData from '../Components/home/HackathonsData';
 
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
 
                 <Navbar className='fixed'/>
                 <HeroSection />
+                {localStorage.getItem("userEmail") === null ? <></> : <HackathonsData/> }
             </div>
             <SponsorsSection />
             <AboutSection />

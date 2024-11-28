@@ -4,6 +4,7 @@ import connectDB from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from "./routes/authRoutes.js"
 import userProfileRoutes from "./routes/userProfileRoutes.js"
+import hackathonRoutes from './routes/hackathonsRoutes.js';
 import cors from "cors";
 
 // Load environment variables

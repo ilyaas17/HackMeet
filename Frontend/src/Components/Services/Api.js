@@ -58,3 +58,12 @@ export const getUserProfile = async (email) => {
 
   }
 };
+
+export const getHackathonsData = async () => {
+  try {
+    const response = await axios.get(`${API_URL}allhackathon/hackathonsdata`);
+    return response.data;   
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+}
