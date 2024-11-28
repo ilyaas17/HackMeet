@@ -26,7 +26,7 @@ function Home() {
                 <HeroSection />
                 {localStorage.getItem("userEmail") === null ? <></> : <HackathonsData/> }
             </div>
-            <SponsorsSection />
+          <div className='pt-96 mt-36'>  <SponsorsSection /></div>
             <AboutSection />
             <FAQ />
           
