@@ -1,42 +1,80 @@
 import React, { useEffect, useState } from 'react';
-import { getHackathonsData } from '../Components/Services/Api.js';  
+import { getHackathonsData } from '../Components/Services/Api.js';
 import logo from '../assets/logo.jpeg';
 import { Link } from 'react-router-dom';
 
 const ViewHackathon = () => {
     const [hackathons, setHackathons] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const fetchHackathons = async () => {
             try {
                 const data = await getHackathonsData();
-                setHackathons(data);  
-                setLoading(false);  
+                setHackathons(data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching hackathons:', error);
-                setLoading(false);  
+                setLoading(false);
             }
         };
 
-        fetchHackathons();  
+        fetchHackathons();
     }, []);
 
     if (loading) {
         return <div>Loading...</div>;
     }
 
+    const filteredHackathons = hackathons.filter(hackathon => 
+        hackathon.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Handle search action on Enter key or Button click
+    const handleSearch = (e) => {
+        e.preventDefault();  // Prevent form submission
+        // Here you can add additional logic if needed (e.g., tracking search queries)
+    };
+
+    // Trigger search on Enter key press
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            handleSearch(e); // Trigger search
+        }
+    };
+
     return (
         <div className="bg-gray-100 py-8 mt-20">
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center mb-6">All Hackathons</h1>
 
-                <div className="space-y-6">
+                {/* Search Bar with Button */}
+                <div className="mb-6 flex justify-center">
+                    <input
+                        type="text"
+                        placeholder="Search Hackathons..."
+                        className="p-2 w-1/2 md:w-1/3 border border-gray-300 rounded-l-lg"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery state
+                        onKeyDown={handleKeyDown} // Trigger search on Enter key
+                    />
+                    <button
+                        onClick={handleSearch}
+                        className="p-2 bg-purple-600 text-white rounded-r-lg hover:bg-purple-500"
+                    >
+                        Search
+                    </button>
+                </div>
+
+                {/* Grid Layout for Hackathon Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {hackathons.map((hackathon) => (
                         <div
                             key={hackathon._id}
-                            className="w-full bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
+                            className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
                         >
+                            {/* Hackathon Image */}
                             <img
                                 src={logo}
                                 alt={hackathon.fullName}
@@ -48,7 +86,7 @@ const ViewHackathon = () => {
                                     {`Deadline: ${new Date(hackathon.tentativeDate).toLocaleDateString()}`}
                                 </p>
                                 <p className="text-gray-600">
-                                    {hackathon.natureOfHackathon === true ? 'Online' : 'Offline'}
+                                    {hackathon.natureOfHackathon === true ? "Online" : "Offline"}
                                 </p>
 
                                 <Link
