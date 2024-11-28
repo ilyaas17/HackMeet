@@ -30,8 +30,8 @@ const HackathonsData = () => {
   const latestHackathons = hackathons.slice(-5);
 
   return (
-    <div className=" bg-gray-100 py-8">
-      <div className="container mx-2 ">
+    <div className="bg-gray-100 py-8">
+      <div className="container mx-2">
         <h1 className="text-5xl font-bold text-center mb-6 pl-48">Hackathons</h1>
         <div className="flex space-x-6 pb-6">
           {latestHackathons.map((hackathon) => (
@@ -56,13 +56,11 @@ const HackathonsData = () => {
                   {hackathon.natureOfHackathon === true ? "Online" : "Offline"}
                 </p>
 
+                {/* Apply Now Button with LocalStorage */}
                 <Link
-
-                  to={`/registration/${hackathon._id}`}
-
                   to={`/hackathonpage/${hackathon._id}`}
-
                   className="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded-md text-center hover:bg-purple-500"
+                  onClick={() => localStorage.setItem("hackId", hackathon._id)}
                 >
                   Apply Now
                 </Link>
@@ -70,7 +68,7 @@ const HackathonsData = () => {
             </div>
           ))}
         </div>
-        <div className="text-right ">
+        <div className="text-right">
           <Link
             to="/hackathons"
             className="text-lg font-semibold text-purple-600 hover:text-purple-500 border-2 border-purple-600 rounded-md p-3"

@@ -29,6 +29,7 @@ app.use("/api/user", userProfileRoutes);
 app.use("/api/manageuserhackathon", manageUserHackathon);
 app.use("/api/allhackathon", hackDataRoutes);
 app.use("/api/register", registrationRoutes);
+app.use("/api/getparticluarhack",hackDataRoutes)
 
 // Start server
 const port = process.env.PORT || 8070;

@@ -15,8 +15,9 @@ export const getHackathons = async (req, res) => {
 
 export const getHackathon = async (req, res) => {
     try{
-        const {id} = req.params;
-        const hackathonData = await hackathonModel.findById(id);
+        const {hackathonId} = req.params;
+        console.log("from back ", hackathonId)
+        const hackathonData = await hackathonModel.findById(hackathonId);
 
         if(!hackathonData){
             return res.status(400).send({
