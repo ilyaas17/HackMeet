@@ -256,7 +256,7 @@ const RegistrationForm = () => {
                     <Step3 formData={formData} handleChange={handleChange} nextStep={nextStep} prevStep={prevStep} />
                 )}
                 {currentStep === 4 && (
-                    <Step4 formData={formData} handleChange={handleChange} prevStep={prevStep}  submitForm={handleSubmit}/>
+                    <Step4 formData={formData} handleChange={handleChange} prevStep={prevStep}  handleSubmit={handleSubmit}/>
                 )} 
             </div>
         </div>

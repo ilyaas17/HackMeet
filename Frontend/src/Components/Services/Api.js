@@ -80,7 +80,7 @@ export const getHackathonsData = async () => {
 
 export const getHackathon = async (hackathonId) =>{
   try{
-    const response = await axios.get(`${API_URL}hackathonpage/${hackathonId}`);
+    const response = await axios.get(`${API_URL}getparticluarhack/hackathonpage/${hackathonId}`);
     return response.data;
   } catch(error) {
     throw error.response.data;

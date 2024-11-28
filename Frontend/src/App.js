@@ -31,7 +31,6 @@ function App() {
       <Route path="/viewprofile" element ={<ProfileView/>}/>
       <Route path="/managehackathon" element ={<ManageHackathon/>}/>
       <Route path="/hackathons" element ={<ViewHackathon/>}/>
-
       <Route path="/hackathondata" element={<HackathonsData />} />
       <Route path="/registration/:id" element={<RegistrationForm />} />
 
