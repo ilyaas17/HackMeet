@@ -32,6 +32,7 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
               onChange={handleChange}
               placeholder="Enter hackathon name"
               className="w-full p-3 border border-gray-300 rounded-md bg-gray-100 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              required
             />
           </div>
 
@@ -39,41 +40,38 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
             <label className="block text-gray-700 font-medium mb-2">
               Nature of Hackathon
             </label>
-            <div className="mb-5">
-              <label className="block text-gray-700 font-medium mb-2">
-                Nature of Hackathon
+            <div className="flex items-center space-x-6">
+              <label htmlFor="online" className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  id="online"
+                  name="isOnline"
+                  value="true"
+                  checked={formData.isOnline === true}
+                  onChange={handleChange}
+                  className="text-purple-500 focus:ring-2 focus:ring-purple-500"
+                  required
+                />
+                <span>Online</span>
               </label>
-              <div className="flex items-center space-x-6">
-                <label htmlFor="online" className="flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    id="online"
-                    name="isOnline"
-                    value="true"
-                    checked={formData.isOnline === true}
-                    onChange={handleChange}
-                    className="text-purple-500 focus:ring-2 focus:ring-purple-500"
-                  />
-                  <span>Online</span>
-                </label>
-                <label
-                  htmlFor="offline"
-                  className="flex items-center space-x-2"
-                >
-                  <input
-                    type="radio"
-                    id="offline"
-                    name="isOnline"
-                    value="false"
-                    checked={formData.isOnline === false}
-                    onChange={handleChange}
-                    className="text-purple-500 focus:ring-2 focus:ring-purple-500"
-                  />
-                  <span>Offline</span>
-                </label>
-              </div>
+              <label
+                htmlFor="offline"
+                className="flex items-center space-x-2"
+              >
+                <input
+                  type="radio"
+                  id="offline"
+                  name="isOnline"
+                  value="false"
+                  checked={formData.isOnline === false}
+                  onChange={handleChange}
+                  className="text-purple-500 focus:ring-2 focus:ring-purple-500"
+                  required
+                />
+                <span>Offline</span>
+              </label>
             </div>
-          </div>
+          </div> 
 
           <div className="mb-5">
             <label
@@ -89,6 +87,7 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
               onChange={handleChange}
               placeholder="Enter a brief description"
               className="w-full p-3 border border-gray-300 rounded-md bg-gray-100 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              required
             ></textarea>
           </div>
 
@@ -107,6 +106,7 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
               onChange={handleChange}
               placeholder="Enter expected registrations"
               className="w-full p-3 border border-gray-300 rounded-md bg-gray-100 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              required
             />
           </div>
 
@@ -125,6 +125,7 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
               onChange={handleChange}
               placeholder="e.g., 2-5"
               className="w-full p-3 border border-gray-300 rounded-md bg-gray-100 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              required
             />
           </div>
 
@@ -142,7 +143,7 @@ const Step3 = ({ formData, handleChange, handleSubmit, handleBack, err }) => {
               Submit
             </button>
           </div>
-           {err && <p className="text-red-500 mt-2">{err}</p>}
+          {err && <p className="text-red-500 mt-2">{err}</p>}
         </div>
       </div>
     </div>

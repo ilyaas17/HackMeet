@@ -39,6 +39,9 @@ const Navbar = () => {
             alt="HackMeet Logo"
             className="rounded-3xl max-h-12 max-w-20"
           />
+          <span className="ml-2 text-4xl font-bold text-purple-700">
+            HackMeet
+          </span>
         </Link>
 
         {/* Navigation Links */}
