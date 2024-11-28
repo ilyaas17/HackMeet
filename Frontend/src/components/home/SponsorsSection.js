@@ -21,7 +21,7 @@ function SponsorsSection() {
     return (
         <div className='container mx-auto my-5 pt-4 mt-12'>
             <div className="text-center mb-4">
-                <h2 className="text-5xl font-semibold">Our Partners</h2>
+                <h2 className="text-5xl font-bold text-purple-950 ">Our Partners</h2>
             </div>
             <div className="flex flex-wrap justify-center gap-9 p-6 ">
                 <img className='lazyloaded h-20' src={image0} alt="Google" width="190px" height="63px" />
