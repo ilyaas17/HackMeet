@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import User from "../models/User.js";
-import UserProfile from "../models/UserProfile.js";
+import User from "../models/user.js";
+import UserProfile from "../models/userProfile.js";
 
 export const signup = async (req, res) => {
   const { username, email, password } = req.body;
