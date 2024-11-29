@@ -62,7 +62,7 @@ const HackathonsData = () => {
                   className="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded-md text-center hover:bg-purple-500"
                   onClick={() => localStorage.setItem("hackId", hackathon._id)}
                 >
-                  Apply Now
+                  View Hackathon
                 </Link>
               </div>
             </div>
