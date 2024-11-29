@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8070/api/";
+const API_URL = "https://hackmeet.onrender.com/api/";
 
 
 export const signup = async (userData) => {
