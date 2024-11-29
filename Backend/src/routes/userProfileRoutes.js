@@ -3,7 +3,6 @@ import { getUserProfile,updateUserProfile } from "../controllers/userProfileCont
 
 const router = express.Router();
 
-
 router.get("/:email", getUserProfile);
 router.put("/:email", updateUserProfile);
 

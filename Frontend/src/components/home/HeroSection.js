@@ -19,7 +19,7 @@ function HeroSection() {
                     <Link to="/login" className="text-white hover:text-purple-300">
                         <button className="py-3 px-6 border-none rounded-md cursor-pointer text-white bg-[#6a0dad] font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg">Explore Hackathon</button>
                     </Link> :
-                    <Link to="/hackathon" className="text-white hover:text-purple-300">
+                    <Link to="/hackathons" className="text-white hover:text-purple-300">
                         <button className="py-3 px-6 border-none rounded-md cursor-pointer text-white bg-[#6a0dad] font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg">Explore Hackathon</button>
                     </Link>
                 }

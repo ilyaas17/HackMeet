@@ -5,6 +5,9 @@ import adminRoutes from './routes/adminRoutes.js';
 import authRoutes from "./routes/authRoutes.js"
 import userProfileRoutes from "./routes/userProfileRoutes.js"
 import cors from "cors";
+import manageUserHackathon from "./routes/manageUserHackathon.js"
+import hackDataRoutes from "./routes/hackathonsDataRoutes.js"
+import registrationRoutes from './routes/registrationRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -20,12 +23,13 @@ app.use(cors());
 
 // Admin routes
 app.use('/api/admin', adminRoutes);
-app.use("/api/auth", authRoutes)
-
-app.use("/api/hackathon", adminRoutes)
-
+app.use("/api/auth", authRoutes);
+app.use("/api/hackathon", adminRoutes);
 app.use("/api/user", userProfileRoutes);
-
+app.use("/api/manageuserhackathon", manageUserHackathon);
+app.use("/api/allhackathon", hackDataRoutes);
+app.use("/api/register", registrationRoutes);
+app.use("/api/getparticluarhack",hackDataRoutes)
 
 // Start server
 const port = process.env.PORT || 8070;
