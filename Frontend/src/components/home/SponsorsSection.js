@@ -1,5 +1,4 @@
 import React from 'react';
-import './SponsorsSection.css';
 import image0 from '../../assets/google.png';
 import image1 from '../../assets/mmicrosoft.png';
 import image2 from '../../assets/alexa.png';
