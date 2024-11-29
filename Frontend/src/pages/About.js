@@ -44,7 +44,7 @@ const About = () => {
                 <img
                     src={logo}
                     alt="Website Logo"
-                    className="mx-auto mb-24 h-96 w-1/2 rounded-lg opacity-50"
+                    className="mx-auto mb-24 h-96 w-96 rounded-lg opacity-50"
                 />
                 <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-900  to-blue-900 bg-clip-text text-transparent">About Us</h1>
             </header>
