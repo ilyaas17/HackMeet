@@ -16,7 +16,6 @@ const images = [
 ];
 
 const About = () => {
-    const [currentImage, setCurrentImage] = useState(0);
     const [imageOrder, setImageOrder] = useState([0, 1, 2]);
 
     const shuffleImages = () => {
@@ -43,7 +42,7 @@ const About = () => {
             <header className="p-6 text-center pt-28 ">
                 <img
                     src={logo}
-                    alt="Website Logo"
+                    alt="WebsiteLogo"
                     className="mx-auto mb-24 h-96 w-96 rounded-lg opacity-50"
                 />
                 <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-900  to-blue-900 bg-clip-text text-transparent">About Us</h1>
@@ -54,7 +53,7 @@ const About = () => {
                     <div className="bg-white text-black rounded-lg shadow-lg overflow-hidden">
                         <img
                             src="https://via.placeholder.com/400x250?text=Card+Image"
-                            alt="Card Image"
+                            alt="CardImage"
                             className="w-full h-48 object-cover"
                         />
                         <div className="p-6">
@@ -70,7 +69,7 @@ const About = () => {
                     <div className="bg-white text-black rounded-lg shadow-lg overflow-hidden">
                         <img
                             src="https://via.placeholder.com/400x250?text=Card+Image+2"
-                            alt="Card Image"
+                            alt="CardImage"
                             className="w-full h-48 object-cover"
                         />
                         <div className="p-6">
@@ -86,7 +85,7 @@ const About = () => {
                     <div className="bg-white text-black rounded-lg shadow-lg overflow-hidden">
                         <img
                             src="https://via.placeholder.com/400x250?text=Card+Image+3"
-                            alt="Card Image"
+                            alt="CardImage"
                             className="w-full h-48 object-cover"
                         />
                         <div className="p-6">
@@ -109,7 +108,7 @@ const About = () => {
                         <div className="relative w-1/3">
                             <img
                                 src={images[imageOrder[0]]}
-                                alt="Random Image 1"
+                                alt="RandomImage1"
                                 className="w-full h-64 object-cover rounded-lg shadow-lg"
                             />
                             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-25 rounded-lg"></div>
@@ -119,7 +118,7 @@ const About = () => {
                         <div className="relative w-1/3">
                             <img
                                 src={images[imageOrder[1]]}
-                                alt="Random Image 2"
+                                alt="RandomImage2"
                                 className="w-full h-64 object-cover rounded-lg shadow-lg"
                             />
                             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-25 rounded-lg"></div>
@@ -129,7 +128,7 @@ const About = () => {
                         <div className="relative w-1/3">
                             <img
                                 src={images[imageOrder[2]]}
-                                alt="Random Image 3"
+                                alt="RandomImage3"
                                 className="w-full h-64 object-cover rounded-lg shadow-lg"
                             />
                             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-25 rounded-lg"></div>

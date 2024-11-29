@@ -1,13 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 function HeroSection() {
-    const navigate = useNavigate();
-
-    const handleButtonClick = () => {
-        navigate('/hackathon');
-    };
 
     return (
         <div className="hero-sectio flex flex-col items-center justify-center text-center h-screen bg-cover bg-center text-white" >

@@ -3,6 +3,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import { createHackathon } from "../Services/Api";
+import {useNavigate} from "react-router-dom"
 
 const CreateHackathonForm = () => {
     const [step, setStep] = useState(1);
@@ -24,7 +25,7 @@ const CreateHackathonForm = () => {
     });
 
     const [err, setError] = useState("");
-
+    const navigate = useNavigate("");
     const handleNext = () => setStep((prev) => prev + 1);
     const handleBack = () => setStep((prev) => prev - 1);
 
@@ -46,6 +47,7 @@ const CreateHackathonForm = () => {
         try {
             await createHackathon(formData);
             alert("Hackathon created successfully!");
+            navigate("/managehackathon")
         } catch (error) {
             setError(error.message);
         }

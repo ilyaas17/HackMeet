@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { userRegistration } from "../Services/Api";
+import {useNavigate} from "react-router-dom"
 
 // Step 1: Personal Information Form
 const Step1 = ({ formData, handleChange, nextStep }) => {
@@ -215,7 +216,7 @@ const RegistrationForm = () => {
         githubLink: '',
     });
     const [err, setError] = useState("");
-
+    const navigate =useNavigate("")
     const nextStep = () => {
         setCurrentStep((prevStep) => prevStep + 1);
     };
@@ -241,6 +242,7 @@ const RegistrationForm = () => {
         try {
             await userRegistration(formData); // Call API
             alert("Registration successful!"); // Show success message
+            navigate("/hackathons")
         } catch (error) {
             // Capture and display API errors
             setError("Failed to submit. Please try again.");
