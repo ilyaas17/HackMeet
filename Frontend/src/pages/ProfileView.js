@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUserProfile, updateUserProfile } from "../Components/Services/Api";
+import { getUserProfile, updateUserProfile } from "../components/Services/Api";
 import { FaEdit, FaSave, FaTimes } from "react-icons/fa";
 import profilePicBg from "../assets/profilePicBg.jpg"
 

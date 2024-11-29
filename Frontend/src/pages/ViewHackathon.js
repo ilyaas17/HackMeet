@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getHackathonsData } from "../Components/Services/Api.js";
+import { getHackathonsData } from "../components/Services/Api.js";
 import logo from "../assets/logo.jpeg";
 import { Link } from "react-router-dom";
 

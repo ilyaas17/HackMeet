@@ -4,18 +4,18 @@ import Home from "./pages/Home"
 import {Routes,Route} from "react-router-dom"
 import Signup from './pages/SignUp';
 import Login from './pages/Login';
-import ManageHackathon from './Components/manageHackathon/ManageHackathon';
-import CreateHackathonForm from './Components/createHackathon/CreateHackathon';
-import Footer from "./Components/Footer/Footer"
+import ManageHackathon from './components/manageHackathon/ManageHackathon';
+import CreateHackathonForm from './components/createHackathon/CreateHackathon';
+import Footer from "./components/Footer/Footer"
 import ProfileView from './pages/ProfileView';
-import Navbar from './Components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import ViewHackathon from './pages/ViewHackathon';
 
-import HackathonsData from './Components/home/HackathonsData';
-import RegistrationForm from './Components/registrationForm/RegistrationForm';
+import HackathonsData from './components/home/HackathonsData';
+import RegistrationForm from './components/registrationForm/RegistrationForm';
 
 import About from './pages/About';
-import HackathonPage from './Components/HackathonPage/HackathonPage';
+import HackathonPage from './components/HackathonPage/HackathonPage';
 
 
 
