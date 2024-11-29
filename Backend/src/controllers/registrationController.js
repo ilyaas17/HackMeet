@@ -1,4 +1,4 @@
-import registrationModel from '../models/registrationModel.js'; // Make sure the correct path
+import registrationModel from '../models/registrationModel.js'; 
 
 export const registerUser = async (req, res) => {
     try {

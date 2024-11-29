@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import Hackathon from '../models/hackathonModel.js';
 import AdminModel from '../models/adminModel.js';
 
-// Admin registration
+
 export const registerAdmin = async (req, res) => {
     const { name, email, password } = req.body; 
 
@@ -28,7 +28,7 @@ export const registerAdmin = async (req, res) => {
     }
 };
 
-// Admin login
+
 export const loginAdmin = async (req, res) => {
     const { email, password } = req.body; 
 
@@ -53,7 +53,7 @@ export const loginAdmin = async (req, res) => {
     }
 };
 
-// Create hackathon function  
+
 export const createHackathon = async (req, res) => {
     const {
         fullName,

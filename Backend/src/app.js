@@ -9,19 +9,19 @@ import manageUserHackathon from "./routes/manageUserHackathon.js"
 import hackDataRoutes from "./routes/hackathonsDataRoutes.js"
 import registrationRoutes from './routes/registrationRoutes.js';
 
-// Load environment variables
+
 dotenv.config();
 
-// Connect to MongoDB
+
 connectDB();
 
 const app = express();
 
-// Middleware
+
 app.use(express.json()); 
 app.use(cors());
 
-// Admin routes
+
 app.use('/api/admin', adminRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/hackathon", adminRoutes);
@@ -31,7 +31,7 @@ app.use("/api/allhackathon", hackDataRoutes);
 app.use("/api/register", registrationRoutes);
 app.use("/api/getparticluarhack",hackDataRoutes)
 
-// Start server
+
 const port = process.env.PORT || 8070;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

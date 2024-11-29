@@ -1,12 +1,11 @@
 import jwt from "jsonwebtoken";
-import User from "../models/User.js"; // Assuming you have a User model for authentication
-import UserProfile from "../models/UserProfile.js"; // Import the UserProfile model
+import User from "../models/User.js";
+import UserProfile from "../models/UserProfile.js";
 
 export const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    // Check if the user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
@@ -16,12 +15,8 @@ export const signup = async (req, res) => {
     if (existingUser2) {
       return res.status(400).json({ message: "User already exists" });
     }
-
-    // Create new user in the User model
     const newUser = new User({ username, email, password });
     await newUser.save();
-
-    // Create an empty profile for the new user in UserProfile
     const userProfile = new UserProfile({
       username,
       email,
@@ -36,15 +31,11 @@ export const signup = async (req, res) => {
       picture: "",
     });
     await userProfile.save();
-
-    // Generate JWT token
     const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-
-    // Respond with the new user data and token
     res.status(201).json({
-      user: newUser, // Replace "data" with "user" or a more meaningful key
+      user: newUser,
       token: token,
       message: "Welcome to HackMeet",
     });

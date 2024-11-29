@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get('/hackathonsdata', getHackathons);
 
-router.get('/hackathonpage/:hackathonId', getHackathon);  //The apply now  button in Home Component triggers this function.
+router.get('/hackathonpage/:hackathonId', getHackathon);
 
 export default router;

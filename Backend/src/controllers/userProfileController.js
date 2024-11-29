@@ -1,9 +1,9 @@
 import UserProfile from "../models/UserProfile.js";
 
-// Get User Profile
+
 export const getUserProfile = async (req, res) => {
   try {
-    const { email } = req.params; // Assuming email is passed in the route
+    const { email } = req.params;
     const userProfile = await UserProfile.findOne({ email });
     if (!userProfile) {
       return res.status(404).json({ message: "User not found" });
