@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpeg";
-import "./Navbar.css";
+import './Navbar.css'
 import { CgProfile } from "react-icons/cg";
 import { CiLogout } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";

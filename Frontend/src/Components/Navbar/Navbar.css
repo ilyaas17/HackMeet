@@ -1,0 +1,47 @@
+/* .purple-navbar {
+    background-color: transparent;
+    top: 0; 
+    z-index: 50; 
+    box-shadow: none; 
+    transition: background-color 0.3s ease; 
+} */
+
+.purple-navbar a {
+    color: #6a0dad; /* Navbar links default to white */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.purple-navbar a:hover {
+    color: #dda0dd; /* Lighter purple on hover */
+}
+
+/* Button Styling */
+.purple-navbar button {
+    /* background-color: #6a0dad !important;  */
+    color: #6a0dad; /* Ensure white text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.purple-navbar button:hover {
+    background-color: #7a1fda !important; /* Slightly lighter purple on hover */
+    color: white !important; /* Maintain white text */
+}
+
+/* Dropdown Styling */
+.purple-navbar .dropdown {
+    background-color: #f4f4f4;
+    color: #6a0dad;
+}
+
+.purple-navbar .dropdown a {
+    color: #6a0dad;
+}
+
+.purple-navbar .dropdown a:hover {
+    color: #a24dff;
+}

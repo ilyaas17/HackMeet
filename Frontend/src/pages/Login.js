@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { login } from "../components/Services/Api";
+import { login } from "../Components/Services/Api";
 
 const Login = () => {
   const [email, setEmail] = useState("");

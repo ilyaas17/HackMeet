@@ -1,11 +1,11 @@
 import React from 'react';
-import HeroSection from '../components/home/HeroSection.js';
-import AboutSection from '../components/home/AboutSection.js';
-import FAQ from '../components/home/FAQ.js';
-import SponsorsSection from '../components/home/SponsorsSection.js';
+import HeroSection from '../Components/home/HeroSection.js';
+import AboutSection from '../Components/home/AboutSection.js';
+import FAQ from '../Components/home/FAQ.js';
+import SponsorsSection from '../Components/home/SponsorsSection.js';
 import bgImage from '../assets/bg_herosection.jpeg';
-import Navbar from '../components/Navbar/Navbar.js';
-import HackathonsData from '../components/home/HackathonsData.js';
+import Navbar from '../Components/Navbar/Navbar.js';
+import HackathonsData from '../Components/home/HackathonsData.js';
 
 
 function Home() {
